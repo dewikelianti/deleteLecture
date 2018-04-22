@@ -47,7 +47,7 @@ class LectureController extends Controller
      */
     public function show(lecture $lecture)
     {
-        //
+        
     }
 
     /**
@@ -79,8 +79,9 @@ class LectureController extends Controller
      * @param  \App\lecture  $lecture
      * @return \Illuminate\Http\Response
      */
-    public function destroy(lecture $lecture)
+    public function destroy($nip)
     {
-        //
+        lecture::find($nip)->delete();
+        return redirect('/lecture');
     }
 }

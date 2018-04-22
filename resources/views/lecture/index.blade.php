@@ -26,9 +26,13 @@
                 <a href="#" class="btn btn-success">
                     <i class="fa fa-pencil"></i>
                 </a>
-                <a href="#" class="btn btn-danger">
+                <form action="{{route('lecture.destroy',['lecture'=>$lecture->nip])}}" method="post">
+                    @csrf
+                @method('delete')
+                <button class="btn btn-danger" type="submit">
                     <i class="fa fa-trash"></i>
-                </a>
+                </button>
+            </form>
             </td>
         </tr>
         @endforeach
